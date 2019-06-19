@@ -24,34 +24,41 @@ class StreamForm extends React.Component {
     };
 
     onSubmit = formValues => {
-        this.props.onSubmit(formValues);
+
+    };
+
+    onButtonClick = ({target}) => {
+        if (target.innerHTML === 'Zmień') {
+            target.style.backgroundColor = '#CCCCCC';
+            target.innerHTML = 'Saved';
+            setTimeout(() => {
+                target.style.backgroundColor = '#FF0000';
+                target.innerHTML = 'Zmień';
+            }, 1500);
+        }
     };
 
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                <Field name="title" component={this.renderInput} label="Enter Title"/>
-                <Field name="description" component={this.renderInput} label="Enter Description"/>
-                <button className="ui button primary">Submit</button>
-            </form>
+            <div className="ten wide column">
+                <div style={{height: '100%', backgroundColor: 'white', padding: '0.5rem'}}>
+                    <h3>Informacje:</h3>
+                    <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
+                        <Field name="title" component={this.renderInput} label="Tytuł:"/>
+                        <Field name="language" component={this.renderInput} label="Język:"/>
+                        <Field name="category" component={this.renderInput} label="Kategoria:"/>
+                        <Field name="tags" component={this.renderInput} label="Tagi:"/>
+                        <button className="ui right floated large button"
+                                style={{backgroundColor: 'red', marginBottom: '0.5rem'}}
+                                onClick={this.onButtonClick}>Zmień
+                        </button>
+                    </form>
+                </div>
+            </div>
         );
     }
 }
 
-const validate = (formValues) => {
-    const errors = {};
-
-    if (!formValues.title) {
-        errors.title = 'You must enter a title';
-    }
-
-    if (!formValues.description) {
-        errors.description = 'You must enter a description';
-    }
-    return errors;
-};
-
 export default reduxForm({
     form: 'streamForm',
-    validate
 })(StreamForm);

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {fetchStreams} from '../../actions';
 
-class StreamList extends React.Component {
+class StreamHome extends React.Component {
     componentDidMount() {
         this.props.fetchStreams();
     }
@@ -69,4 +69,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, {fetchStreams})(StreamList);
+export default connect(mapStateToProps, {fetchStreams})(StreamHome);

@@ -1,6 +1,15 @@
 import streams from '../apis/streams';
 import history from '../history';
-import {CREATE_STREAM, DELETE_STREAM, EDIT_STREAM, FETCH_STREAM, FETCH_STREAMS, SIGN_IN, SIGN_OUT} from "./types";
+import {
+    ADD_MESSAGE,
+    CREATE_STREAM,
+    DELETE_STREAM,
+    EDIT_STREAM,
+    FETCH_STREAM,
+    FETCH_STREAMS,
+    SIGN_IN,
+    SIGN_OUT
+} from "./types";
 
 export const signIn = (userId) => {
     return {
@@ -47,4 +56,13 @@ export const deleteStream = (id) => async dispatch => {
 
     dispatch({type: DELETE_STREAM, payload: id});
     history.push('/');
+};
+
+////////////////
+
+export const addMessage = payload => {
+    return {
+        type: ADD_MESSAGE,
+        payload: payload
+    };
 };
