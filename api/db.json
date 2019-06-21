@@ -1,0 +1,124 @@
+{
+  "category": {
+    "Polecane": [
+      {
+        "title": "RIRI / CS:GO / !giveaway",
+        "user": "allkeyshop_tv",
+        "viewersNumber": "324",
+        "imageId": "u184.jpg",
+        "isLive": true
+      },
+      {
+        "title": "charity Giving away 5 copies of game",
+        "user": "Thorlar",
+        "viewersNumber": "178",
+        "imageId": "u185.jpg",
+        "isLive": true
+      },
+      {
+        "title": "MSI Groups Day 2: Flash Wolverine",
+        "user": "Riot Games",
+        "viewersNumber": "150k",
+        "imageId": "u186.jpg",
+        "isLive": false
+      },
+      {
+        "title": "NoPixel | GOMERTHON Subs",
+        "user": "Timmac",
+        "viewersNumber": "3,3k",
+        "imageId": "u187.jpg",
+        "isLive": false
+      }
+    ],
+    "League of Legends": [
+      {
+        "title": "SaltyTeemo: Iron 4 League of Legends ",
+        "user": "SaltyTeemo",
+        "viewersNumber": "232",
+        "imageId": "u192.jpg",
+        "isLive": false
+      },
+      {
+        "title": "MSI : League of Legends",
+        "user": "LVPes",
+        "viewersNumber": "20,1k",
+        "imageId": "u193.jpg",
+        "isLive": true
+      },
+      {
+        "title": "Masters 0 LP demoting or account deleting",
+        "user": "SoloRenektonOnly",
+        "viewersNumber": "1,2k",
+        "imageId": "u194.jpg",
+        "isLive": false
+      },
+      {
+        "title": "Ależ pozytywnie",
+        "user": "Bubnik2",
+        "viewersNumber": "88",
+        "imageId": "u195.png",
+        "isLive": true
+      }
+    ],
+    "Truckmania": [
+      {
+        "title": "Trial 18h",
+        "user": "CarlJrtm",
+        "viewersNumber": "1,1k",
+        "imageId": "u196.jpg",
+        "isLive": true
+      },
+      {
+        "title": "Trackmania PepeLaugh",
+        "user": "Spammlej",
+        "viewersNumber": "521",
+        "imageId": "u197.jpg",
+        "isLive": true
+      },
+      {
+        "title": "Ultime Jornee/Soiree de Trainer",
+        "user": "MoMaN",
+        "viewersNumber": "460",
+        "imageId": "u198.jpg",
+        "isLive": true
+      },
+      {
+        "title": "ZLAN BAC BLANC",
+        "user": "Shisheyu_Mayamoto",
+        "viewersNumber": "451",
+        "imageId": "u199.jpg",
+        "isLive": false
+      }
+    ],
+    "Fortnite": [
+      {
+        "title": "TSM HighDistortion | Season 9",
+        "user": "HighDistortion",
+        "viewersNumber": "6,1k",
+        "imageId": "u188.jpg",
+        "isLive": true
+      },
+      {
+        "title": "MZQQQ TRAIN SOLO ARENE",
+        "user": "SolaryFortnite",
+        "viewersNumber": "3,5k",
+        "imageId": "u189.jpg",
+        "isLive": true
+      },
+      {
+        "title": "ARENA - Code: LOEYA",
+        "user": "Loeya",
+        "viewersNumber": "3,5k",
+        "imageId": "u190.jpg",
+        "isLive": false
+      },
+      {
+        "title": "Like We Never Left #LGLoyal",
+        "user": "CDNThe3rd",
+        "viewersNumber": "2,1k",
+        "imageId": "u191.jpg",
+        "isLive": true
+      }
+    ]
+  }
+}
