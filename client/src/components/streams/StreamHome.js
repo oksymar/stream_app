@@ -2,30 +2,28 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {fetchStreams} from '../../actions';
+import HomePlayer from "./HomePlayer";
+import VideoList from "./VideoList";
 
 class StreamHome extends React.Component {
+    state = {
+        video: 0
+    };
+
     componentDidMount() {
         this.props.fetchStreams();
     }
 
-    renderAdmin(stream) {
-        if (stream.userId === this.props.currentUserId) {
-            return (
-                <div className="right floated content">
-                    <Link to={`/streams/edit/${stream.id}`} className="ui button primary">Edit</Link>
-                    <Link to={`/streams/delete/${stream.id}`} className="ui button negative">
-                        Delete
-                    </Link>
-                </div>
-            );
-        }
+    onArrowClick = () => {
+        this.setState({
+            video: this.state.video ? 0 : 1
+        })
     };
 
     renderList() {
         return this.props.streams.map(stream => {
             return (
                 <div className="item" key={stream.id}>
-                    {this.renderAdmin(stream)}
                     <i className="large middle aligned icon camera"/>
                     <div className="content">
                         <Link to={`/streams/${stream.id}`} className="header">
@@ -53,9 +51,20 @@ class StreamHome extends React.Component {
     render() {
         return (
             <div>
-                <h2>Streams</h2>
-                <div className="ui celled list">{this.renderList()}</div>
-                {this.renderCreate()}
+                <div className="ui center aligned four column grid hidden-element">
+                    <div className="middle aligned row">
+                        <div className="right aligned two wide column">
+                            <i aria-hidden="true" className="huge link arrow circle left icon"
+                               onClick={this.onArrowClick}/>
+                        </div>
+                        <HomePlayer video={this.state.video}/>
+                        <div className="left aligned two wide column">
+                            <i aria-hidden="true" className="huge link arrow circle right icon"
+                               onClick={this.onArrowClick}/>
+                        </div>
+                    </div>
+                </div>
+                <VideoList/>
             </div>
         );
     }

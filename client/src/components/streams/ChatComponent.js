@@ -55,8 +55,9 @@ class ChatComponent extends React.Component {
                 <form className="ui fluid icon input" onSubmit={this.onFormSubmit}>
                     <input type="text"
                            value={this.state.message}
-                           onChange={this.handleMessageChange}/>
-                    <i aria-hidden="true" className="black send icon"/>
+                           onChange={this.handleMessageChange}
+                           style={{borderColor: 'rgba(34,36,38,.15)'}}/>
+                    <i aria-hidden="true" className="black send icon" style={{opacity: '1'}}/>
                 </form>
             </div>
         )

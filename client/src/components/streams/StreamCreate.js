@@ -1,6 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {createStream} from "../../actions";
 import ChatComponent from "./ChatComponent";
 import VideoPlayer from "./VideoPlayer";
 import StreamForm from "./StreamForm";
@@ -8,10 +6,6 @@ import StreamForm from "./StreamForm";
 class StreamCreate extends React.Component {
     state = {
         counter: 0
-    };
-
-    onSubmit = formValues => {
-        this.props.createStream(formValues);
     };
 
     onStartClick = ({target}) => {
@@ -74,7 +68,8 @@ class StreamCreate extends React.Component {
                                         <div style={{fontWeight: '800'}}>
                                             <i aria-hidden="true" className=" large black thumbs up outline icon"/>
                                             0
-                                            <i aria-hidden="true" className=" large black thumbs down outline icon" style={{marginLeft: '1em'}}/>
+                                            <i aria-hidden="true" className=" large black thumbs down outline icon"
+                                               style={{marginLeft: '1em'}}/>
                                             0
                                         </div>
                                     </div>
@@ -83,7 +78,7 @@ class StreamCreate extends React.Component {
                             <div className="row" style={{paddingTop: '1em'}}>
                                 <div style={{backgroundColor: 'white', padding: '0.5rem'}}>
                                     <h3>Token:</h3>
-                                    <div style={{fontWeight: '800', paddingLeft: '1rem'}}>
+                                    <div style={{fontWeight: '800', paddingLeft: '1rem', overflowWrap: 'break-word'}}>
                                         DSVMMwdEdsdd4f45DEHf54dttD3dEq279DSVw
                                     </div>
                                 </div>
@@ -96,4 +91,4 @@ class StreamCreate extends React.Component {
     }
 }
 
-export default connect(null, {createStream})(StreamCreate);
+export default StreamCreate;

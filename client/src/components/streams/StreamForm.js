@@ -17,7 +17,7 @@ class StreamForm extends React.Component {
         return (
             <div className={className}>
                 <label>{label}</label>
-                <input {...input}/>
+                <input {...input} autoComplete="off" style={{borderColor: 'rgba(34,36,38,.15)'}}/>
                 {this.renderError(meta)}
             </div>
         );
@@ -48,8 +48,8 @@ class StreamForm extends React.Component {
                         <Field name="language" component={this.renderInput} label="Język:"/>
                         <Field name="category" component={this.renderInput} label="Kategoria:"/>
                         <Field name="tags" component={this.renderInput} label="Tagi:"/>
-                        <button className="ui right floated large button"
-                                style={{backgroundColor: 'red', marginBottom: '0.5rem'}}
+                        <button id="submitButton" className="ui right floated large button"
+                                style={{color: 'black', backgroundColor: 'red', marginBottom: '0.5rem'}}
                                 onClick={this.onButtonClick}>Zmień
                         </button>
                     </form>
@@ -60,5 +60,5 @@ class StreamForm extends React.Component {
 }
 
 export default reduxForm({
-    form: 'streamForm',
+    form: 'streamForm'
 })(StreamForm);

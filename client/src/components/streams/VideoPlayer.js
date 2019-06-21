@@ -40,10 +40,6 @@ class VideoPlayer extends React.Component {
     };
 
     render() {
-        // if (!this.props.stream) {
-        //     return <div>Loading...</div>;
-        // }
-
         return (
             <div className="ten wide column">
                 <div style={{backgroundColor: 'white'}}>

@@ -1,0 +1,42 @@
+html, body {
+    font-family: Arial, serif;
+}
+
+.input-placeholder::placeholder {
+    color: #333333 !important;
+    opacity: 0.9;
+}
+
+.header-icon {
+    color: #FF0000;
+    font-size: 1.6em !important;
+    font-weight: 550 !important;
+}
+
+.header-icon-span {
+    font-family: Arial, serif;
+    padding-left: 0.15em;
+}
+
+.live-styling {
+    width: 36px;
+    height: 17px;
+    background-color: #ff0000;
+    position: absolute;
+    right: 1.5rem;
+    top: 0.5rem;
+}
+
+a:link, a:visited, a:active {
+    color: #333333;
+}
+
+a:hover {
+    color: black;
+}
+
+@media screen and (max-width: 780px) {
+    .hidden-element {
+        display: none !important;;
+    }
+}
