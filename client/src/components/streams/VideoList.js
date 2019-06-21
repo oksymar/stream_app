@@ -43,7 +43,7 @@ class VideoList extends React.Component {
                         <img src={images(`./${video.imageId}`)}
                              alt=""
                              className="ui centered image"/>
-                        {video.isLive ? <img src={liveIcon} alt="" className="live-styling"/> : null}
+                        {video.isLive ? <img src={liveIcon} alt="" className="live-styling hidden-element"/> : null}
                     </Link>
                     <Link to="#" style={{paddingBottom: '0'}}>
                         <span style={{
