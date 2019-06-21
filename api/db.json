@@ -1,4 +1,18 @@
 {
+  "videos": [
+    {
+      "title": "toast breaks the game",
+      "user": "disguisedtoast",
+      "viewersNumber": "10,1k",
+      "isLive": true
+    },
+    {
+      "title": "Play of the game",
+      "user": "disguisedtoast",
+      "viewersNumber": "53",
+      "isLive": true
+    }
+  ],
   "category": {
     "Polecane": [
       {

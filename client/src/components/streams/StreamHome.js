@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {fetchStreams} from '../../actions';
-import HomePlayer from "./HomePlayer";
+import {fetchStreams, fetchVideos} from '../../actions';
 import VideoList from "./VideoList";
+import HomePlayer from "./HomePlayer";
+import {Link} from "react-router-dom";
 
 class StreamHome extends React.Component {
     state = {
@@ -12,6 +12,7 @@ class StreamHome extends React.Component {
 
     componentDidMount() {
         this.props.fetchStreams();
+        this.props.fetchVideos();
     }
 
     onArrowClick = () => {
@@ -20,39 +21,11 @@ class StreamHome extends React.Component {
         })
     };
 
-    renderList() {
-        return this.props.streams.map(stream => {
+    renderPlayer = () => {
+        if (this.props.videos[this.state.video]) {
             return (
-                <div className="item" key={stream.id}>
-                    <i className="large middle aligned icon camera"/>
-                    <div className="content">
-                        <Link to={`/streams/${stream.id}`} className="header">
-                            {stream.title}
-                        </Link>
-                        <div className="description">{stream.description}</div>
-                    </div>
-                </div>
-            );
-        });
-    };
-
-    renderCreate() {
-        if (this.props.isSignedIn) {
-            return (
-                <div style={{textAlign: 'right'}}>
-                    <Link to="/streams/new" className="ui button primary">
-                        Create Stream
-                    </Link>
-                </div>
-            );
-        }
-    };
-
-    render() {
-        return (
-            <div>
                 <div className="ui center aligned four column grid hidden-element">
-                    <div className="middle aligned row">
+                    <div className="middle aligned row" style={{paddingBottom: '0'}}>
                         <div className="right aligned two wide column">
                             <i aria-hidden="true" className="huge link arrow circle left icon"
                                onClick={this.onArrowClick}/>
@@ -63,7 +36,34 @@ class StreamHome extends React.Component {
                                onClick={this.onArrowClick}/>
                         </div>
                     </div>
+                    <div className="middle aligned row" style={{paddingTop: '0'}}>
+                        <div className="eight wide column">
+                            <div className="ui grid">
+                                <div className="row" style={{paddingBottom: '0'}}>
+                                    <Link to="#" className="left aligned column">
+                                        <h3>{this.props.videos[this.state.video].title}</h3>
+                                    </Link>
+                                </div>
+                                <div className="row" style={{paddingTop: '0'}}>
+                                    <Link to="#"
+                                          className="left aligned column">{this.props.videos[this.state.video].user}</Link>
+                                    <div className="right aligned right floated six wide column">
+                                        <i aria-hidden="true" className="black eye icon"/>
+                                        {this.props.videos[this.state.video].viewersNumber}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            );
+        }
+    };
+
+    render() {
+        return (
+            <div>
+                {this.renderPlayer()}
                 <VideoList/>
             </div>
         );
@@ -73,9 +73,9 @@ class StreamHome extends React.Component {
 const mapStateToProps = (state) => {
     return {
         streams: Object.values(state.streams),
-        currentUserId: state.auth.userId,
-        isSignedIn: state.auth.isSignedIn
+        isSignedIn: state.auth.isSignedIn,
+        videos: Object.values(state.videos)
     }
 };
 
-export default connect(mapStateToProps, {fetchStreams})(StreamHome);
+export default connect(mapStateToProps, {fetchStreams, fetchVideos})(StreamHome);
