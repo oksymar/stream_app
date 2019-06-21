@@ -13,7 +13,6 @@ class StreamCreate extends React.Component {
             target.style.backgroundColor = '#CCCCCC';
             target.innerHTML = 'Zakończ transmisję streama';
             this.timer = setInterval(() => {
-                console.log('dsd');
                 this.setState({
                     counter: this.state.counter + 1
                 });

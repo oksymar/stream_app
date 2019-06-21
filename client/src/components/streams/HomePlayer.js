@@ -28,8 +28,6 @@ class HomePlayer extends React.Component {
     }
 
     componentDidMount() {
-        // const {id} = this.props.match.params;
-        // this.props.fetchStream(id);
         this.buildPlayer();
     }
 
@@ -50,6 +48,8 @@ class HomePlayer extends React.Component {
         this.player = flv.createPlayer({
             type: 'mp4',
             url: video
+            // type: 'flv',
+            // url: 'https://www.dailymotion.com/video/x7biizi'
         });
         this.player.attachMediaElement(this.videoRef.current);
         this.player.load();
