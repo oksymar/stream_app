@@ -1,6 +1,7 @@
 import React from 'react';
 import flv from 'flv.js';
 import {connect} from 'react-redux';
+import {streamURL} from "../../apis/streams";
 
 class VideoPlayer extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class VideoPlayer extends React.Component {
         const id = 'DSVMMwdEdsdd4f45DEHf54dttD3dEq279DSVw';
         this.player = flv.createPlayer({
             type: 'flv',
-            url: `http://localhost:8000/live/${id}.flv`
+            url: `${streamURL}/live/${id}.flv`
         });
         this.player.attachMediaElement(this.videoRef.current);
         this.player.load();

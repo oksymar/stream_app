@@ -1,4 +1,4 @@
-import streams from '../apis/streams';
+import {databaseURL} from '../apis/streams';
 import {ADD_MESSAGE, FETCH_STREAMS, FETCH_VIDEOS, SIGN_IN, SIGN_OUT} from "./types";
 
 export const signIn = (userId) => {
@@ -15,13 +15,13 @@ export const signOut = () => {
 };
 
 export const fetchStreams = () => async dispatch => {
-    const response = await streams.get('/category');
+    const response = await databaseURL.get('/category');
 
     dispatch({type: FETCH_STREAMS, payload: response.data})
 };
 
 export const fetchVideos = () => async dispatch => {
-    const response = await streams.get('/videos');
+    const response = await databaseURL.get('/videos');
 
     dispatch({type: FETCH_VIDEOS, payload: response.data})
 };
