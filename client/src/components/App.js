@@ -7,14 +7,16 @@ import StreamHome from "./streams/StreamHome";
 
 const App = () => {
     return (
-        <div className="ui center container">
+        <div>
             <Router history={history}>
                 <div>
                     <Header/>
-                    <Switch>
-                        <Route path='/' exact component={StreamHome}/>
-                        <Route path='/streams/new' exact component={StreamCreate}/>
-                    </Switch>
+                    <div className="ui center container">
+                        <Switch>
+                            <Route path='/' exact component={StreamHome}/>
+                            <Route path='/streams/new' exact component={StreamCreate}/>
+                        </Switch>
+                    </div>
                 </div>
             </Router>
         </div>

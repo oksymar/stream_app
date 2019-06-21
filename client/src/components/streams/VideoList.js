@@ -2,6 +2,7 @@ import React from 'react';
 import {fetchStreams} from "../../actions";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import liveIcon from './../../images/liveIcon.png';
 
 const images = require.context('./../../images', true);
 
@@ -42,7 +43,7 @@ class VideoList extends React.Component {
                         <img src={images(`./${video.imageId}`)}
                              alt=""
                              className="ui centered image"/>
-                        {/*<div className="live-styling"/>*/}
+                        {video.isLive ? <img src={liveIcon} alt="" className="live-styling"/> : null}
                     </Link>
                     <Link to="#" style={{paddingBottom: '0'}}>
                         <span style={{
